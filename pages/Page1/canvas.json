@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 430,
+          "bottomRow": 950,
           "containerStyle": "none",
           "snapRows": 124,
           "parentRowSpace": 1,
@@ -31,7 +31,7 @@
               "borderColor": "#E0DEDE",
               "isVisibleDownload": true,
               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
-              "topRow": 7,
+              "topRow": 0,
               "isSortable": true,
               "type": "TABLE_WIDGET_V2",
               "inlineEditingSaveOption": "ROW_LEVEL",
@@ -78,6 +78,15 @@
                 },
                 {
                   "key": "primaryColumns.name.computedValue"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.buttonColor"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.borderRadius"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.boxShadow"
                 }
               ],
               "needsHeightForContent": true,
@@ -115,7 +124,7 @@
                 }
               },
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "columnUpdatedAt": 1684997981162,
+              "columnUpdatedAt": 1684999472732,
               "defaultSelectedRowIndices": [
                 0
               ],
@@ -132,11 +141,16 @@
                 "email",
                 "image",
                 "country",
-                "name"
+                "name",
+                "customColumn1"
               ],
-              "dynamicPropertyPathList": [],
+              "dynamicPropertyPathList": [
+                {
+                  "key": "primaryColumns.customColumn1.isCellVisible"
+                }
+              ],
               "displayName": "Table",
-              "bottomRow": 35,
+              "bottomRow": 56,
               "columnWidthMap": {
                 "task": 245,
                 "step": 70,
@@ -146,7 +160,11 @@
               "hideCard": false,
               "mobileRightColumn": 50,
               "parentColumnSpace": 16.75,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "primaryColumns.customColumn1.onClick"
+                }
+              ],
               "borderWidth": "1",
               "primaryColumns": {
                 "id": {
@@ -418,12 +436,47 @@
                   "computedValue": "{{usersTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"name\"]))}}",
                   "sticky": "",
                   "validation": {}
+                },
+                "customColumn1": {
+                  "allowCellWrapping": false,
+                  "allowSameOptionsInNewRow": true,
+                  "index": 10,
+                  "width": 150,
+                  "originalId": "customColumn1",
+                  "id": "customColumn1",
+                  "alias": "action",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "button",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": "true",
+                  "isDerived": true,
+                  "label": "action",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "sticky": "",
+                  "validation": {},
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "labelColor": "#FFFFFF",
+                  "buttonColor": "{{usersTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+                  "borderRadius": "{{usersTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+                  "boxShadow": "{{usersTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+                  "customAlias": "",
+                  "buttonLabel": "修改",
+                  "onClick": "{{JSObject1.myFun1();}}"
                 }
               },
               "key": "ho1kvl3boj",
               "canFreezeColumn": true,
               "isDeprecated": false,
-              "rightColumn": 35,
+              "rightColumn": 64,
               "textSize": "0.875rem",
               "widgetId": "srovk7wdka",
               "minWidth": 450,
@@ -446,13 +499,18 @@
               "borderColor": "#E0DEDE",
               "widgetName": "User_Details",
               "isCanvas": true,
+              "dynamicPropertyPathList": [
+                {
+                  "key": "isVisible"
+                }
+              ],
               "displayName": "Form",
               "iconSVG": "/static/media/icon.ea3e08d130e59c56867ae40114c10eed.svg",
               "searchTags": [
                 "group"
               ],
-              "topRow": 4,
-              "bottomRow": 43,
+              "topRow": 56,
+              "bottomRow": 95,
               "parentRowSpace": 10,
               "type": "FORM_WIDGET",
               "hideCard": false,
@@ -460,13 +518,17 @@
               "mobileRightColumn": 57,
               "animateLoading": true,
               "parentColumnSpace": 16.75,
-              "leftColumn": 35,
+              "dynamicTriggerPathList": [],
+              "leftColumn": 27,
               "dynamicBindingPathList": [
                 {
                   "key": "borderRadius"
                 },
                 {
                   "key": "boxShadow"
+                },
+                {
+                  "key": "isVisible"
                 }
               ],
               "children": [
@@ -496,8 +558,8 @@
                         "paragraph",
                         "label"
                       ],
-                      "topRow": 1,
-                      "bottomRow": 5,
+                      "topRow": 2,
+                      "bottomRow": 6,
                       "type": "TEXT_WIDGET",
                       "hideCard": false,
                       "mobileRightColumn": 25.5,
@@ -505,7 +567,7 @@
                       "overflow": "NONE",
                       "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 1.5,
+                      "leftColumn": 4,
                       "dynamicBindingPathList": [
                         {
                           "key": "truncateButtonColor"
@@ -522,7 +584,7 @@
                       "text": "User Details",
                       "key": "99gbl7h9ps",
                       "isDeprecated": false,
-                      "rightColumn": 25.5,
+                      "rightColumn": 28,
                       "textAlign": "LEFT",
                       "dynamicHeight": "AUTO_HEIGHT",
                       "widgetId": "y08jhne33q",
@@ -978,21 +1040,21 @@
               "key": "1fps7099q5",
               "backgroundColor": "#FFFFFF",
               "isDeprecated": false,
-              "rightColumn": 59,
+              "rightColumn": 51,
               "dynamicHeight": "AUTO_HEIGHT",
               "widgetId": "4fkepjzhqy",
               "minWidth": 450,
-              "isVisible": true,
+              "isVisible": "{{JSObject1.showDialog}}",
               "parentId": "0",
               "renderMode": "CANVAS",
               "isLoading": false,
               "mobileTopRow": 11,
               "responsiveBehavior": "fill",
-              "originalTopRow": 4,
+              "originalTopRow": 56,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "mobileLeftColumn": 33,
               "maxDynamicHeight": 9000,
-              "originalBottomRow": 43,
+              "originalBottomRow": 95,
               "minDynamicHeight": 10
             }
           ]
